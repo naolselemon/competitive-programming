@@ -12,9 +12,9 @@ class HashTable:
         address = self._hash(key)
         if(self.data[address] is None):
             self.data[address] = []
-        self.data[address].append([key, value])
-        # print(f"Key {key} has been added at address {address}")
-        # print(self.data)
+        self.data[address].append([key, value]) # Handling collisions by chaining
+        print(f"Key {key} has been added at address {address}")
+        print(self.data)
         return self.data
     
     def get(self, key):
@@ -26,11 +26,21 @@ class HashTable:
             if k == key:
                 return v
         return None
+    
+    def keys(self):
+        allKeys = []
+        for bucket in self.data:
+            if bucket is not None:
+                for k, v in bucket:
+                    allKeys.append(k)
+        return allKeys
+
 
 
 newHashTable = HashTable(50)
 newHashTable.set("grapes", 10000)
 newHashTable.set("apples", 54)
 print(newHashTable.get("grapes"))  # Output: 10000
+print(newHashTable.keys())
 
 
