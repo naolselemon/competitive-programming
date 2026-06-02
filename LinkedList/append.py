@@ -23,9 +23,16 @@ class LinkedList:
 
         last_node.next = new_node
 
+    def display(self):
+        current = self.head
+        elements = []
+        while current:
+            elements.append(str(current.data))
+            current = current.next
+        print("->".join(elements))
+
 
 myHead = LinkedList()
 myHead.append(1)
 myHead.append(2)
-
-print(myHead.head)
+myHead.display()
