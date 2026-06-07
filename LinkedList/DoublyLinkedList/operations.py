@@ -46,7 +46,7 @@ class DoublyLinkedList:
         self.head = newNode
         self.length += 1
 
-    def insert(index, data):
+    def insert(self, index, data):
         newNode = Node(data)
         counter = 0
         current = self.head
