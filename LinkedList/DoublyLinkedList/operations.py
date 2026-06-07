@@ -85,3 +85,12 @@ class DoublyLinkedList:
         leaderFollower = unWantedNode.next
         leader.next = leaderFollower
         leaderFollower.prev = leader
+
+
+myList = DoublyLinkedList()
+myList.append(1)
+myList.append(3)
+myList.prepend(10)
+myList.insert(2, 200)
+myList.remove(2)
+myList.display()
