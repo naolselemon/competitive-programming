@@ -66,3 +66,22 @@ class DoublyLinkedList:
         newNode.next = followingNode
         followingNode.prev = newNode
 
+    def remove(self, index):
+        counter = 0
+        current = self.head
+        if index >= self.length:
+            print("Index out of bound")
+            return
+        if index < 0:
+            print("Index cannot be negative")
+            return
+
+        while counter != index - 1:
+            current = current.next
+            counter += 1
+
+        leader = current
+        unWantedNode = leader.next
+        leaderFollower = unWantedNode.next
+        leader.next = leaderFollower
+        leaderFollower.prev = leader
