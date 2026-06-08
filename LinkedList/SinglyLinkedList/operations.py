@@ -70,12 +70,28 @@ class LinkedList:
             current = current.next
         print("->".join(elements))
 
+    def reverse(self):
+        if not self.head.next:
+            return self.head
+        first = self.head
+        second = first.next
+
+        while second:
+            third = second.next
+            second.next = first
+            first = second
+            second = third
+
+        self.head.next = None
+        self.head = first
+
 
 myHead = LinkedList()
 myHead.append(1)
 myHead.append(2)
 myHead.insert(1, 100)
 myHead.insert(10, 200)
-myHead.remove(1)
-myHead.remove(-10)
+# myHead.remove(1)
+# myHead.remove(-10)
+myHead.reverse()
 myHead.display()
