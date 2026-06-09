@@ -89,7 +89,8 @@ class DoublyLinkedList:
 
 myList = DoublyLinkedList()
 myList.append(1)
-myList.append(3)
+myList.append(101)
+myList.prepend(202)
 myList.prepend(10)
 myList.insert(2, 200)
 myList.remove(2)
