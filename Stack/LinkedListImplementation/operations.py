@@ -14,3 +14,17 @@ class Stack:
             return
 
         print(self.top.data)
+    def push(self, data):
+        new_node = Node(data)
+
+        if self.length == 0:
+            self.top = new_node
+            self.bottom = new_node
+        else:
+            holdingPointer = self.top
+            self.top = new_node
+            self.top.next = holdingPointer
+        self.length += 1
+
+        return self
+
