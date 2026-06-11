@@ -8,3 +8,9 @@ class Stack:
         self.top = None
         self.bottom = None
         self.length = 0
+    def peek(self):
+        if self.length == 0:
+            print("Stack is empty!")
+            return
+
+        print(self.top.data)
