@@ -38,3 +38,20 @@ class Queue:
         self.first = self.first.next
         self.length -= 1
 
+    def display(self):
+        current = self.first
+        elements = []
+        while current:
+            elements.append(str(current.data))
+            current = current.next
+        print(" | ".join(elements))
+
+
+if __name__ == "__main__":
+    queue = Queue()
+    queue.enqueue(10)
+    queue.enqueue(20)
+    queue.enqueue(30)
+    queue.peek()
+    queue.dequeue()
+    queue.display()
